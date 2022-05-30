@@ -1,0 +1,81 @@
+.animePage {
+  box-sizing: border-box;
+  .anime {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  .vagInfo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 60px;
+  }
+  .vagSummary {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 20px;
+  }
+  .title {
+  }
+  .ranking {
+    margin-top: 70px;
+    display: flex;
+    gap: 70px;
+    text-align: center;
+  }
+  .scores {
+  }
+  .rank {
+  }
+  .popular {
+  }
+  .source {
+  }
+  .image {
+    width: 300px;
+    height: 400px;
+    img {
+      height: 100%;
+    }
+  }
+  .rating {
+    margin-top: 10px;
+  }
+  .theLine {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 80%;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  //   -------------------------------afterLine----------------
+  .afterLine {
+    max-width: 1250px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 70px;
+    // background-color: azure;
+  }
+  .synopsis,
+  .background {
+    margin-top: 70px;
+    h3 {
+      margin-bottom: 30px;
+    }
+    p {
+      text-indent: 70px;
+      line-height: 2;
+      font-size: 18px;
+      width: 97%;
+      margin: 0 auto;
+    }
+  }
+  //   ------------------youtube------------------
+  .youtube {
+    padding: 70px 400px;
+  }
+}

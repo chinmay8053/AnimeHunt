@@ -1,0 +1,31 @@
+.carousel-div {
+  display: flex;
+  min-height: 500px;
+  .caption {
+    width: 60%;
+    background-color: #1b1717;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 50px 100px 150px;
+  }
+
+  p {
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  .carousel-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .image {
+    width: 40%;
+    div {
+      width: 100%;
+    }
+  }
+}

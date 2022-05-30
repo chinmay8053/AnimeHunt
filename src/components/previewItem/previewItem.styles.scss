@@ -1,0 +1,55 @@
+#scroll-1::-webkit-scrollbar {
+  height: 7px;
+}
+
+#scroll-1::-webkit-scrollbar-track {
+  background: #ffffff00;
+  border-radius: 20px;
+}
+
+#scroll-1::-webkit-scrollbar-thumb {
+  background-color: #726d6e;
+  border-radius: 20px;
+  border: none;
+}
+
+#prevItem {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 50px;
+  color: white;
+  background-color: #1b1717;
+  .genreName {
+    font-size: 38px;
+  }
+  .preview {
+    overflow-x: scroll;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .item {
+    display: inline-block;
+    cursor: pointer;
+    transition: 250ms;
+    &:hover,
+    &:hover .title {
+      transform: scale(1.02);
+      color: #fff;
+    }
+  }
+  img {
+    width: 170px;
+    height: 250px;
+    overflow: hidden;
+  }
+  .title {
+    font-size: 15px;
+    margin-top: 8px;
+    text-align: center;
+    color: #b9b2b4;
+  }
+}
