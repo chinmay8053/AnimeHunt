@@ -5,11 +5,46 @@
     padding: 5px 10px;
     text-decoration: none;
     transition: 250ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-left: 10px;
+  }
+  #link {
+    margin: 0;
+    padding: 0;
   }
   .logo {
     margin-right: 30px;
   }
   #bg-dark {
     background-color: gray;
+  }
+  button {
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+  .bg-color div {
+    background-color: rgb(109, 105, 105);
+    border-radius: 5px;
+    color: white;
+  }
+  .dropdownMenu {
+    padding: 5px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  p {
+    margin: 5px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: 250ms;
+    cursor: pointer;
+    width: max-content;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.864);
+    }
   }
 }
