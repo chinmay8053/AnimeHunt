@@ -55,7 +55,7 @@ function Header() {
               <NavDropdown title="Genres" id="navbarScrollingDropdown" className="bg-color">
                 <div className="dropdownMenu">
                   {genres.map(({ id, title }) => (
-                    <Link to={`/genres/${id}`} id="link" key={id}>
+                    <Link to={{ pathname: `/genres/${id}` }} state={{ title }} id="link" key={id}>
                       <p>{title}</p>
                     </Link>
                   ))}

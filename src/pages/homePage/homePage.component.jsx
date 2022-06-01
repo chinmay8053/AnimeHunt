@@ -23,10 +23,8 @@ function Home() {
   };
 
   useEffect(() => {
-    console.log("call");
     window.addEventListener("scroll", divLoading);
     return () => {
-      console.log("remove");
       removeListener();
     };
   }, [view.action, view.adventure, view.comedy]);

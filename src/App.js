@@ -14,7 +14,6 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/anime/:mal_id" element={<AnimePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/genres" element={<GenresPage />} />
         <Route path="/genres/:mal_id" element={<GenresPage />} />
       </Routes>
     </div>
