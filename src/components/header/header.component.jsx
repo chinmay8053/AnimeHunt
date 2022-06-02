@@ -1,40 +1,33 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Container, Form, FormControl, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { genres } from "../genres";
 
 import "./header.styles.scss";
 
+const activeStyle = {
+  background: "black",
+  borderRadius: "8px",
+};
 function Header() {
-  const genres = [
-    { id: 1, title: "Action" },
-    { id: 2, title: "Adventure" },
-    { id: 3, title: "Racing" },
-    { id: 4, title: "Comedy" },
-    { id: 5, title: "Avant Garde" },
-    { id: 6, title: "Mythology" },
-    { id: 7, title: "Mystery" },
-    { id: 8, title: "Drama" },
-    { id: 9, title: "Ecchi" },
-    { id: 10, title: "Fantasy" },
-    { id: 12, title: "Hentai" },
-    { id: 13, title: "Historical" },
-    { id: 14, title: "Horror" },
-    { id: 18, title: "Mecha" },
-    { id: 21, title: "Samurai" },
-    { id: 22, title: "Romance" },
-    { id: 24, title: "Sci-Fi" },
-    { id: 26, title: "Girls Love" },
-    { id: 27, title: "Shounen" },
-    { id: 30, title: "Sports" },
-    { id: 36, title: "Slice of Life" },
-    { id: 37, title: "Supernatural" },
-    { id: 41, title: "Suspense" },
-    { id: 46, title: "Award Winning" },
-    { id: 47, title: "Gourmet" },
-  ];
-  const activeStyle = {
-    background: "black",
-    borderRadius: "8px",
+  const navigate = useNavigate();
+  const [openHide, setOpenHide] = useState(false);
+
+  const searchHandle = async (e) => {
+    const search = e.target.value;
+    if (search === "") {
+      setOpenHide(false);
+      return;
+    }
+    const res = await axios.get(`https://api.jikan.moe/v4/anime?letter=${search}`);
+    const data = res.data;
+    setOpenHide(data.data);
+  };
+
+  const animeHandle = (mal_id) => {
+    navigate(`anime/${mal_id}`);
+    setOpenHide(false);
   };
   return (
     <div id="header">
@@ -62,10 +55,33 @@ function Header() {
                 </div>
               </NavDropdown>
             </Nav>
-            <Form className="d-flex">
-              <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+            <div className="search-bar">
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                  onChange={searchHandle}
+                  onClick={searchHandle}
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form>
+              {openHide && (
+                <div className="search-hidden">
+                  {openHide.map((data) => {
+                    return (
+                      <div className="item" key={data.mal_id} onClick={animeHandle.bind(this, data.mal_id)}>
+                        <div className="search-img">
+                          <img src={data.images.jpg.image_url} alt={data.title} />
+                        </div>
+                        <h6>{data.title}</h6>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

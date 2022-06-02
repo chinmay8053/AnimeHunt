@@ -1,0 +1,13 @@
+.footerCom {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 100px;
+  background-color: #212529;
+  color: white;
+  .logo {
+    display: flex;
+    gap: 20px;
+  }
+}

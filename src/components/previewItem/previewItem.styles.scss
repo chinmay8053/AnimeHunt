@@ -34,7 +34,7 @@
   .item {
     display: inline-block;
     cursor: pointer;
-    transition: 250ms;
+    transition: 350ms;
     &:hover,
     &:hover .title {
       transform: scale(1.02);
@@ -44,7 +44,6 @@
   img {
     width: 170px;
     height: 250px;
-    overflow: hidden;
   }
   .title {
     font-size: 15px;

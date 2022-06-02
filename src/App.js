@@ -5,6 +5,7 @@ import Home from "./pages/homePage/homePage.component";
 import AnimePage from "./pages/animePage/animePage.component";
 import MoviesPage from "./pages/moviePage/moves.component";
 import GenresPage from "./pages/genresPage/genresPage.component";
+import Footer from "./components/footer/footer.component";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/genres/:mal_id" element={<GenresPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

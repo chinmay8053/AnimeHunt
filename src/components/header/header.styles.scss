@@ -25,6 +25,7 @@
     background-color: transparent;
     color: white;
     border: none;
+    padding: 1px 10px;
   }
   .bg-color div {
     background-color: rgb(109, 105, 105);
@@ -45,6 +46,51 @@
     width: max-content;
     &:hover {
       background-color: rgba(0, 0, 0, 0.864);
+    }
+  }
+  .search-bar {
+    position: relative;
+  }
+  .search-hidden {
+    position: absolute;
+    background-color: rgb(109 105 105);
+    height: 500px;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    border-radius: 5px;
+  }
+  .item {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: rgb(90, 87, 87);
+    cursor: pointer;
+  }
+  // .imgTitle {
+  // }
+  .search-img {
+    height: 70px;
+    width: 50px;
+    img {
+      width: 100%;
+      transition: 250ms;
+      height: 100%;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  h6 {
+    color: #ddd;
+    transition: 250ms;
+    &:hover {
+      color: #fff;
+      transform: scale(1.01);
     }
   }
 }
